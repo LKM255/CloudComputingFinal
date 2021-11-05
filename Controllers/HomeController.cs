@@ -29,6 +29,17 @@ namespace CloudComputingFinal.Controllers
             Datos dat = con.BuscarDNI(dni);
             return View(dat);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(string nombre,string apellido, string dni)
+        {
+            Data.Conexion con = new Data.Conexion();
+            Datos dat = con.Crear(nombre,apellido,dni);
+            return Redirect("Index");
+        }
         public IActionResult Privacy()
         {
             return View();

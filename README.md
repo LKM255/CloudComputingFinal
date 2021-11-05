@@ -1,2 +1,0 @@
-# CloudComputingFinal
-Trabajo final

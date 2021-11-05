@@ -40,5 +40,19 @@ namespace CloudComputingFinal.Data
             }
             return dat;
         }
+
+        public  Datos Crear(string nombre, string apellido, string dni)
+        {
+            Datos dat = new Datos();
+            con = new SqlConnection("Server=tcp:buscardnidbserver.database.windows.net,1433;Initial Catalog=BuscarDni_db;Persist Security Info=False;" +
+               "User ID=jeanpierre;Password=Jean2551;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
+            string fd = "Insert into Datos(Nombre, Apellido, DNI) values('"+nombre+"','"+apellido+"','"+dni+"')";
+            comando = new SqlCommand(fd, con);
+            con.Open();
+            comando.ExecuteNonQuery();
+            con.Close();
+            return dat;
+        }
     }
 }

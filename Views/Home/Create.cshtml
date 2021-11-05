@@ -1,0 +1,30 @@
+﻿@model CloudComputingFinal.Models.Datos
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using (Html.BeginForm())
+{
+    <div class="text-center">
+        <h1 class="display-4">Buscar datos por DNI</h1>
+        <div class="form-group">
+            @Html.Label("Nombre", "Ingrese su nombre", htmlAttributes: new { @class = "control-label" })
+            <div class="form-group">
+                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", @maxlength = "8" } })
+            </div>
+            @Html.Label("Apellido", "Ingrese su apellido", htmlAttributes: new { @class = "control-label" })
+            <div class="form-group">
+                @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "form-control", @maxlength = "50" } })
+            </div>
+            @Html.Label("DNI", "Ingrese su DNI", htmlAttributes: new { @class = "control-label" })
+            <div class="form-group">
+                @Html.EditorFor(model => model.DNI, new { htmlAttributes = new { @class = "form-control", @maxlength = "50" } })
+
+            </div>
+            <input type="submit" value="Crear" class="btn btn-primary" />
+            <a class="btn btn-primary" asp-action="Index">Buscar</a>
+            @*<div class="col-md-2 text-center">
+            <input type="submit" value="Buscar" class="btn btn-primary"/>
+        </div>*@
+        </div>
+     </div>
+}
