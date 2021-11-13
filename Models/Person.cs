@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 
 namespace CloudComputingFinal.Models
 {
-    public class Datos
+    public class Person
     {
+        
+        public int Id { get; set; }
         public string Nomber { get; set; }
         public string Apellido { get; set; }
         public string DNI { get; set; }

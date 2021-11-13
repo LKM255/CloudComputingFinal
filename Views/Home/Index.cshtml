@@ -1,4 +1,4 @@
-﻿@model CloudComputingFinal.Models.Datos
+﻿@model Datos
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -18,7 +18,7 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nombre)
+                @Html.DisplayNameFor(model => model.Nomber)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Apellido)
@@ -28,7 +28,7 @@
 
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => modelItem.Nombre)
+                @Html.DisplayFor(modelItem => modelItem.Nomber)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => modelItem.Apellido)

@@ -1,4 +1,4 @@
-﻿@model CloudComputingFinal.Models.Datos
+﻿@model Datos
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -9,7 +9,7 @@
         <div class="form-group">
             @Html.Label("Nombre", "Ingrese su nombre", htmlAttributes: new { @class = "control-label" })
             <div class="form-group">
-                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control", @maxlength = "8" } })
+                @Html.EditorFor(model => model.Nomber, new { htmlAttributes = new { @class = "form-control", @maxlength = "8" } })
             </div>
             @Html.Label("Apellido", "Ingrese su apellido", htmlAttributes: new { @class = "control-label" })
             <div class="form-group">
@@ -22,9 +22,6 @@
             </div>
             <input type="submit" value="Crear" class="btn btn-primary" />
             <a class="btn btn-primary" asp-action="Index">Buscar</a>
-            @*<div class="col-md-2 text-center">
-            <input type="submit" value="Buscar" class="btn btn-primary"/>
-        </div>*@
         </div>
      </div>
 }

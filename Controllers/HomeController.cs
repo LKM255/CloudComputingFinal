@@ -1,4 +1,4 @@
-﻿using CloudComputingFinal.Models;
+﻿    using CloudComputingFinal.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -23,21 +23,21 @@ namespace CloudComputingFinal.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(string dni)
+        public async Task<ActionResult> Index(string dni)
         {
             Data.Conexion con = new Data.Conexion();
-            Datos dat = con.BuscarDNI(dni);
-            return View(dat);
+            Task<Datos> dat = con.GetPerson(dni);
+            return View(await dat);
         }
         public IActionResult Create()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Create(string nombre,string apellido, string dni)
+        public async Task<ActionResult> Create(string nomber,string apellido, string dni)
         {
             Data.Conexion con = new Data.Conexion();
-            Datos dat = con.Crear(nombre,apellido,dni);
+            await con.CrearPersona(nomber,apellido,dni);
             return Redirect("Index");
         }
         public IActionResult Privacy()
